@@ -85,6 +85,11 @@ bot.onText(/\/start/, (msg) => {
 
 bot.on("message", function (msg) {
     saveUser(msg.chat.username, msg.chat.id);
+    if (msg.text.toLowerCase() === "зарегистрироваться") {
+        
+    }
+    bot.sendAudio(msg.chat.id, "./media/audio/song.mp3")
+
 })
 
 let port = process.env.PORT === undefined ? 3030 : process.env.PORT
