@@ -73,6 +73,16 @@ app.post("/bot/message", function (request, response) {
     response.end();
 })
 
+bot.onText(/\/start/, (msg) => {
+
+    bot.sendMessage(msg.chat.id, "Добро пожаловать", {
+        "reply_markup": {
+            "keyboard": [["Сообщение 1", "Сообщение 2"], ["Сообщение 3"], ["Сообщение 4"]]
+        }
+    });
+
+});
+
 bot.on("message", function (msg) {
     saveUser(msg.chat.username, msg.chat.id);
 })
