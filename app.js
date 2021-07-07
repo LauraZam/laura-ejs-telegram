@@ -77,4 +77,6 @@ bot.on("message", function (msg) {
     saveUser(msg.chat.username, msg.chat.id);
 })
 
-app.listen(8080);
+let port = process.env.PORT === undefined ? 3030 : process.env.PORT
+
+app.listen(port);
